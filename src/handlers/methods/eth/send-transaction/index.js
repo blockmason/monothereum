@@ -1,3 +1,5 @@
-const sendTransaction = () => Promise.resolve('0x1234567890123456789012345678901234567890123456789012345678901234');
+import crypto from 'crypto';
+
+const sendTransaction = () => Promise.resolve(`0x${crypto.randomBytes(32).toString('hex')}`);
 
 export default sendTransaction;
