@@ -8,4 +8,5 @@ BABEL="${BASE_DIR}/node_modules/.bin/babel"
 "${BABEL}" \
   --source-root="${BASE_DIR}/src" \
   --out-dir="${BASE_DIR}/lib" \
+  --only='**/index.js' \
   "${BASE_DIR}/src"
