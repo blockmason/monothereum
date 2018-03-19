@@ -1,14 +1,10 @@
-import bodyParser from 'body-parser';
 import express from 'express';
-import helmet from 'helmet';
-import jsonrpc from '../middleware/jsonrpc';
+import middleware from '../middleware';
 
 const createApp = (requestHandler) => {
   const app = express();
 
-  app.use(helmet());
-  app.use(bodyParser.json());
-  app.use(jsonrpc());
+  app.use(middleware);
 
   app.post('/', async (request, response) => {
     try {
