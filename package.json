@@ -1,0 +1,23 @@
+{
+  "name": "meth",
+  "version": "0.1.0",
+  "description": "A mock Ethereum JSON RPC server.",
+  "main": "lib/index.js",
+  "repository": "https://github.com/blockmason/meth",
+  "author": "Devin Canterberry <devin@blockmason.io>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel --source-root src --out-dir lib src",
+    "start": "node lib/index.js"
+  },
+  "dependencies": {
+    "babel-polyfill": "6.26.0",
+    "body-parser": "1.18.2",
+    "express": "4.16.3",
+    "helmet": "3.12.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1"
+  }
+}
