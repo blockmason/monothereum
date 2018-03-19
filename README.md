@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/blockmason/monothereum.svg?style=svg)](https://circleci.com/gh/blockmason/monothereum)
 
+> **Note:** This is pre-alpha software and is *not* feature-complete!
+
 An implementation of the Ethereum JSON-RPC interface suitable for private
 networks. This application gives its clients the appearance of working in
 an Ethereum-compatible blockchain, without actually having anything to do
