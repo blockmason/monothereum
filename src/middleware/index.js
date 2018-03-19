@@ -1,13 +1,13 @@
-import bodyParser from 'body-parser';
-import helmet from 'helmet';
-import jsonrpc from './jsonrpc';
-import logger from './logger';
+import bodyParserMiddleware from 'body-parser';
+import helmetMiddleware from 'helmet';
+import jsonrpcMiddleware from './jsonrpc';
+import loggerMiddleware from './logger';
 
-const middleware = [
-  helmet(),
-  bodyParser.json(),
-  jsonrpc(),
-  logger()
+const middleware = ({ logger }) => [
+  helmetMiddleware(),
+  bodyParserMiddleware.json(),
+  jsonrpcMiddleware(),
+  loggerMiddleware({ logger })
 ].reduce((left, right) => {
   return (request, response, next) => {
     return left(request, response, () => {
