@@ -1,7 +1,13 @@
+# By default, ignore everything
 *
 
+# Needed for `yarn install`
 !/package.json
 !/yarn.lock
+
+# Needed for `yarn build`
 !/src/
 !/.babelrc
+
+# Needed for the Docker entry-point
 !/docker-entrypoint.sh
