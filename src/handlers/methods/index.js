@@ -1,3 +1,5 @@
+/* eslint camelcase: ['off'] */
+
 import eth from './eth';
 
 const methods = {

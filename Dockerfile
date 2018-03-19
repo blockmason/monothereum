@@ -1,12 +1,12 @@
-FROM twuni/javascript:1.0.7
+FROM twuni/javascript:1.0.9
 
 WORKDIR /home/project
 
 COPY . /home/project
 
-RUN yarn install
+RUN yarn --silent install
 
-RUN yarn build
+RUN yarn --silent build
 
 ENTRYPOINT ["./docker-entrypoint.sh"]
 

@@ -8,12 +8,6 @@ const middleware = ({ logger }) => [
   bodyParserMiddleware.json(),
   jsonrpcMiddleware(),
   loggerMiddleware({ logger })
-].reduce((left, right) => {
-  return (request, response, next) => {
-    return left(request, response, () => {
-      right(request, response, next);
-    });
-  };
-});
+].reduce((left, right) => (request, response, next) => left(request, response, () => right(request, response, next)));
 
 export default middleware;

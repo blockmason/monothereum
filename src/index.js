@@ -1,7 +1,10 @@
+/* global console */
+
 import 'babel-polyfill';
 
-import Logger from './logger';
+import Configuration from './configuration';
 import ConsoleShipper from './shippers/console';
+import Logger from './logger';
 
 import createApp from './app';
 import handlers from './handlers';
@@ -19,6 +22,6 @@ const app = createApp({
   })
 });
 
-app.listen(8545, () => {
-  logger.info('start', { port: 8545 });
+app.listen(Configuration.BIND_PORT, () => {
+  logger.info('start', { port: Configuration.BIND_PORT });
 });

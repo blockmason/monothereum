@@ -1,3 +1,5 @@
-const getBlockNumber = () => Promise.resolve(`0x${new Date().getTime().toString(16)}`);
+const HEX = 16;
+
+const getBlockNumber = () => Promise.resolve(`0x${new Date().getTime().toString(HEX)}`);
 
 export default getBlockNumber;

@@ -3,10 +3,6 @@ class Logger {
     this.attributes = { category, shipper };
   }
 
-  get timestamp() {
-    return new Date().toISOString();
-  }
-
   error(type, context) {
     this.log('ERROR', type, context);
   }
@@ -16,12 +12,9 @@ class Logger {
   }
 
   log(level, type, context) {
-    const {
-      attributes: { category, shipper },
-      timestamp
-    } = this;
-    const event = { timestamp, level, category, type, context };
-    shipper.ship(event);
+    const { attributes: { category, shipper } } = this;
+    const timestamp = new Date().toISOString();
+    shipper.ship({ category, context, level, timestamp, type });
   }
 
   subcategory(name) {

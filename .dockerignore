@@ -8,6 +8,8 @@
 # Needed for `yarn build`
 !/src/
 !/.babelrc
+!/scripts/build.sh
 
 # Needed for the Docker entry-point
 !/docker-entrypoint.sh
+!/scripts/start.sh

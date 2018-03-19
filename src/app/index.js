@@ -1,5 +1,7 @@
 import express from 'express';
 
+const HTTP_CLIENT_ERROR = 400;
+
 const createApp = ({ handler, middleware }) => {
   const app = express();
 
@@ -9,7 +11,7 @@ const createApp = ({ handler, middleware }) => {
     try {
       response.jsonrpc(await handler(request.jsonrpc));
     } catch (error) {
-      response.status(400).send(error.message);
+      response.status(HTTP_CLIENT_ERROR).send(error.message);
     }
   });
 

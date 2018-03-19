@@ -3,6 +3,6 @@
 SCRIPTS_DIR="$(cd "$(dirname "$0")"; pwd)"
 BASE_DIR="$(dirname "${SCRIPTS_DIR}")"
 
-NODE="$(which node)"
+ESLINT="${BASE_DIR}/node_modules/.bin/eslint"
 
-"${NODE}" "${BASE_DIR}/lib/index.js"
+"${ESLINT}" "${BASE_DIR}/src" $*
